@@ -1,3 +1,7 @@
+# TLDR
+
+Follow `flow.sh`
+
 # CNNs for Text Classification in PyTorch
 
 A minimal PyTorch implementation of Convolutional Neural Networks (CNNs) for text classification.
