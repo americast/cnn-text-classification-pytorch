@@ -35,11 +35,15 @@ def predict(filename, model, cti, wti, itt):
     fo = open(filename)
     for idx, line in enumerate(fo):
         line = line.strip()
+        line_org = line
         line, y = line.split("\t") if line.count("\t") else [line, None]
+        if y == None:
+            pu.db
         x = tokenize(line, UNIT)
         xc = [[cti[c] if c in cti else UNK_IDX for c in w] for w in x]
         xw = [wti[w] if w in wti else UNK_IDX for w in x]
         data.append([idx, line, xc, xw, y])
+        line_prev = line_org
     fo.close()
     with torch.no_grad():
         model.eval()
